@@ -2,4 +2,8 @@
 
 **B**LIP  **E**LAN  **L**anguage **A**nnotation - A Python package for processing ELAN-based multi-lingual transcriptions.
 
-This package will be released to the general public on Mar 2021.
+- Source code: [https://github.com/letuananh/bela](https://github.com/letuananh/bela)
+- PyPI: [https://pypi.org/project/bela/](https://pypi.org/project/bela/)
+
+
+This package will be released to the general public by 01 Mar 2021.
