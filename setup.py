@@ -56,7 +56,10 @@ setup(
     # Reference: https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=['Programming Language :: Python',
                  'Development Status :: 2 - Pre-Alpha',
-                 'Natural Language',
+                 'Natural Language :: English',
+                 'Natural Language :: Chinese (Simplified)',
+                 'Natural Language :: Malay',
+                 'Natural Language :: Tamil',
                  'Environment :: Plugins',
                  'Intended Audience :: Developers',
                  'License :: OSI Approved :: {}'.format(pkg_info['__license__']),
