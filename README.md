@@ -1,2 +1,3 @@
-# bela-private
-[B]LIP  [E]LAN  [L]anguage  [A]nnotation
+# BELA
+
+**B**LIP  **E**LAN  **L**anguage **A**nnotation - A Python package for processing ELAN-based multi-lingual transcriptions.
