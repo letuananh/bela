@@ -2,9 +2,16 @@
 
 **B**LIP  **E**LAN  **L**anguage **A**nnotation - A Python package for processing ELAN-based multi-lingual transcriptions.
 
-- Documentation: [https://github.com/letuananh/bela-convention](https://github.com/letuananh/bela-convention)
-- Source code: [https://github.com/letuananh/bela](https://github.com/letuananh/bela)
+- Documentation: [https://blipntu.github.io/belacon/](https://blipntu.github.io/belacon/)
 - PyPI: [https://pypi.org/project/bela/](https://pypi.org/project/bela/)
 
-
-This package will be released to the general public by 01 Mar 2021.
+**Citation**: Tuan Anh Le, 
+              Seraphina Fong,
+              Jinyi Wong,
+              Fei Ting Woon,
+              Eshwaaree C Yogarrajah,
+              Nur Sakinah Binte Mohd Salleh,
+              Shaza binte Amran,
+              Suzy J Styles, 2021,
+              "BELA - A Processing Pathway for Multilingual Parent-child Conversations",
+              [BMRS 2021](https://www.bilingualism-matters.org/events/bilingualism-matters-research-symposium-2021)
