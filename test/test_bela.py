@@ -29,4 +29,4 @@ def getLogger():
 class TestBELA(unittest.TestCase):
 
     def test_bela(self):
-        self.assertEqual(bela.__version__, '0.1a1')
+        self.assertEqual(bela.__version__, '2.0.0a19')
