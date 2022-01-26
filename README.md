@@ -1,6 +1,6 @@
 # BELA
 
-**B**LIP  **E**LAN  **L**anguage **A**nnotation - A Python package for processing ELAN-based multi-lingual transcriptions.
+**B**LIP  **E**LAN  **L**anguage **A**nnotation - A method for creating and processing multi-lingual transcriptions using [BELA convention](https://blipntu.github.io/belacon/) and [ELAN software](https://archive.mpi.nl/tla/elan/download).
 
 - Documentation: [https://blipntu.github.io/belacon/](https://blipntu.github.io/belacon/)
 - PyPI: [https://pypi.org/project/bela/](https://pypi.org/project/bela/)
