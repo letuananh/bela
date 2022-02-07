@@ -165,7 +165,7 @@ def _report_error(message, errors=None):
         getLogger().warning(message)
 
 
-INVALID_CHAR = r'\r\n\t,ɡʔʲ‘’'
+INVALID_CHAR = r'\{\}\[\]\r\n\t,ɡʔʲ‘’'
 FULLWIDTH_CHARS = r'，。？（）！　'
 # [2022-01-06 木 14:05] TA
 # Allow ? in Mandarin annotations for now
@@ -207,8 +207,14 @@ class TokenList:
         return iter(self.__tokens)
 
     def append(self, token):
-        if token:
-            self.__tokens.append(token)
+        if token is not None:
+            # strip off special characters ("=", "~", etc.)
+            if token.startswith('='):
+                token = token[1:]
+            if token.endswith('~'):
+                token = token[:-1]
+            if token:
+                self.__tokens.append(token)
 
     def extend(self, tokens):
         for t in tokens:
