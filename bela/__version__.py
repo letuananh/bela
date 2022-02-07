@@ -14,6 +14,6 @@ __description__ = "BLIP ELAN Language Annotation package"
 __url__ = "https://github.com/BLIPNTU/belacon"
 __maintainer__ = "Le Tuan Anh"
 __version_major__ = "2.0.0"
-__version__ = "{}a19".format(__version_major__)
+__version__ = "{}a20".format(__version_major__)
 __version_long__ = "{} - alpha".format(__version_major__)
 __status__ = "3 - Alpha"
