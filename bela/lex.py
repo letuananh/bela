@@ -8,6 +8,7 @@
 Lexical Analyser
 """
 
+import logging
 from pathlib import Path
 from collections import defaultdict as dd
 from collections import Counter
@@ -189,10 +190,17 @@ class LexicalAnalyser:
                         try:
                             __, tag = pos_tag([word])[0]
                             lemma = wnl.lemmatize(word, pos=ptpos_to_wn(tag, default='n'))
-                        except Exception:
+                        except Exception as e:
+                            # logging.getLogger(__name__).exception("BELA.Lemmatizer crashed")
                             # do not lemmatize if NLTK crashed
                             __lemmatize_error = True
-                            stats_dict['errors'].append('Lemmatizer crashed. Lexicon was generated without lemmatizer.')
+                            if isinstance(e, LookupError):
+                                if 'omw-1.4' in str(e):
+                                    stats_dict['errors'].append(f'Lexicon was generated without lemmatizer. OMW-1.4 data not found.')
+                                else:
+                                    stats_dict['errors'].append(f'Lexicon was generated without lemmatizer. Unknown resource missing.')
+                            else:
+                                stats_dict['errors'].append('Lexicon was generated without lemmatizer. Unknown error was raised.')
                     _is_unknown = self.is_unknown(lemma, lang)
                 _lex_entry = {
                     'word': word,
