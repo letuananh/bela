@@ -200,8 +200,8 @@ class Bela1:
         langmix = LanguageMix()
         for _person_name, _utterances in self.person_utterances.items():
             for u in _utterances:
-                if u.related_utterances is not None:
-                    for c in u.related_utterances:
+                if u.chunks is not None:
+                    for c in u.chunks:
                         if c.tsfrom and c.tsto:
                             if to_ts is not None and c.tsto > to_ts:
                                 continue

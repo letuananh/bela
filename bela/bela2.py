@@ -48,7 +48,7 @@ def time_map(tier):
     return _time_map
 
 
-def _find_children(parent_tier, child_tier, errors=None):
+def _map_children(parent_tier, child_tier, errors=None, tier_class='chunks', is_many=True):
     ''' map all children chunks into parent's utterances '''
     _parents = sorted(parent_tier, key=lambda x: x.from_ts)
     _children = deque(sorted(child_tier, key=lambda x: x.from_ts))
@@ -56,9 +56,17 @@ def _find_children(parent_tier, child_tier, errors=None):
         while _children:
             ann_child = _children[0]
             if ann_child.from_ts >= ann.from_ts and ann_child.to_ts <= ann.to_ts:
-                if ann.related_utterances is None:
-                    ann.related_utterances = []
-                ann.related_utterances.append(ann_child)
+                if is_many:
+                    if not getattr(ann, tier_class):
+                        setattr(ann, tier_class, [])
+                    getattr(ann, tier_class).append(ann_child)
+                else:
+                    if getattr(ann, tier_class) is None:
+                        setattr(ann, tier_class, ann_child)
+                    else:
+                        getLogger().warning("Conflicting child annotations were found")
+                        if errors is not None:
+                            errors.append("Conflicting child annotations were found")
                 _children.popleft()
                 getLogger().debug(f"linked: {repr(ann)} -- {repr(ann_child)}")
             elif ann.from_ts > ann_child.to_ts:
@@ -72,7 +80,6 @@ def _find_children(parent_tier, child_tier, errors=None):
     if _children:
         for child in _children:
             getLogger().debug(f"Orphaned annotation found: {child}")
-
 
 class Person(DataObject):
     def __init__(self, name, code=None, utterances=None, tiers=[], belav2=None, **kwargs):
@@ -267,7 +274,7 @@ class Bela2(DataObject):
                 for u in person.utterances:
                     u.person = person
                 if person['Chunk']:
-                    _find_children(person.utterances, person['Chunk'], errors=self.errors)
+                    _map_children(person.utterances, person['Chunk'], errors=self.errors, tier_class='chunks')
                 else:
                     self.errors.append(f"Person {person.name} ({person.code}) does not have a chunk tier")
                 if not person['Language']:
@@ -314,8 +321,8 @@ class Bela2(DataObject):
                             u.errors.append(f"Empty annotation '' found at [{u.from_ts} :: {u.to_ts}]")
                         else:
                             u.warnings.append(f"Empty annotation '' found at [{u.from_ts} :: {u.to_ts}]")
-                    if u.related_utterances:
-                        for cu in u.related_utterances:
+                    if u.chunks:
+                        for cu in u.chunks:
                             if not cu.text.strip():
                                 if u.text or not self.allow_empty:
                                     u.errors.append(f"Empty chunk annotation '' found at [{cu.from_ts} :: {cu.to_ts}]")
@@ -329,7 +336,7 @@ class Bela2(DataObject):
                             elif "#!" in cu.language:
                                 u.errors.append(f"Unsure language tag ({cu.language}) was used for chunk `{cu.text.strip()}` [{cu.from_ts} :: {cu.to_ts}]")
                     u_value = u.text.replace(' ', '')
-                    _chunks = u.related_utterances if u.related_utterances else []
+                    _chunks = u.chunks if u.chunks else []
                     c_value = ''.join(x.text for x in _chunks)
                     c_value = c_value.replace(' ', '')
                     if u_value != c_value:
@@ -401,8 +408,8 @@ class Bela2(DataObject):
                 continue
             getLogger().debug(f"{person.name}  -- {person.code}")
             for u in person.utterances:
-                if u.related_utterances:
-                    for c in u.related_utterances:
+                if u.chunks:
+                    for c in u.chunks:
                         if c.from_ts and c.to_ts:
                             if to_ts is not None and c.to_ts > to_ts:
                                 continue
