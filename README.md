@@ -1,4 +1,4 @@
-# BELA
+# 👸 BELA
 
 **B**LIP  **E**LAN  **L**anguage **A**nnotation - A method for creating and processing multi-lingual transcriptions using [BELA convention](https://blipntu.github.io/belacon/) and [ELAN software](https://archive.mpi.nl/tla/elan/download).
 
