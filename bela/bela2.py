@@ -81,10 +81,13 @@ def _map_children(parent_tier, child_tier, errors=None, tier_class='chunks', is_
         for child in _children:
             getLogger().debug(f"Orphaned annotation found: {child}")
 
+
 class Person(DataObject):
     def __init__(self, name, code=None, utterances=None, tiers=[], belav2=None, **kwargs):
         super().__init__(name=name, code=code, utterances=utterances, **kwargs)
         self.belav2 = belav2
+        if utterances is None:
+            self.utterances = elan.Tier()
         self.__tier_map = {}
         self.__tiers = list(tiers) if tiers else []
 
@@ -299,7 +302,7 @@ class Bela2(DataObject):
                         cu.language = lang_tier_time_map[key].value
                         linked_language_annotations.remove(lang_tier_time_map[key])
                     elif cu.from_ts is not None and cu.from_ts.value is not None \
-                         and cu.to_ts is not None and cu.to_ts.value is not None:
+                        and cu.to_ts is not None and cu.to_ts.value is not None:
                         # [2021-09-07 火 14:32]
                         # [TA] try to map using timestamp values if possible
                         key = (cu.from_ts.value, cu.to_ts.value)
@@ -335,6 +338,8 @@ class Bela2(DataObject):
                                     u.warnings.append(f"Language tag not found in the chunk `{cu.text.strip()}` [{cu.from_ts} :: {cu.to_ts}]")
                             elif "#!" in cu.language:
                                 u.errors.append(f"Unsure language tag ({cu.language}) was used for chunk `{cu.text.strip()}` [{cu.from_ts} :: {cu.to_ts}]")
+                    else:
+                        u.chunks = []  # [2022-03-16 水 11:38][TA] Make sure that chunks is not None
                     u_value = u.text.replace(' ', '')
                     _chunks = u.chunks if u.chunks else []
                     c_value = ''.join(x.text for x in _chunks)
