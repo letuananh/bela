@@ -170,6 +170,18 @@ class Bela2(DataObject):
         return self.elan.roots
 
     @property
+    def media_file(self):
+        return self.elan.media_file
+
+    @property
+    def media_url(self):
+        return self.elan.media_url
+
+    @property
+    def relative_media_url(self):
+        return self.elan.relative_media_url
+
+    @property
     def person_map(self):
         ''' Map participant (i.e. person code) to person object '''
         return self.__person_map
