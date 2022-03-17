@@ -449,3 +449,7 @@ class Bela2(DataObject):
     def from_elan(elan, eaf_path=":memory:", **kwargs):
         ''' Create a BELA-con version 2.x object from a :class:`speach.elan.ELANDoc` object '''
         return Bela2(elan, path=eaf_path, **kwargs)
+
+
+read_eaf = Bela2.read_eaf
+from_elan = Bela2.from_elan
