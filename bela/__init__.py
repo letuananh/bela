@@ -18,11 +18,11 @@ from .common import process_text, tokenize
 from .common import KNOWN_LANGUAGES, KNOWN_LANGUAGE_CLASSES
 from .bela1 import Bela1
 from .bela2 import Bela2, SPECIAL_SPEAKER, SPECIAL_SPEAKER_NAME
-
+from .bela2 import read_eaf, from_elan
 
 __all__ = ['Bela1', 'maketime', 'getlang', 'is_special_token',
-           'process_token', 'process_text', 'tokenize',
+           'process_text', 'tokenize',
            'KNOWN_LANGUAGES', 'KNOWN_LANGUAGE_CLASSES',
            'SPECIAL_SPEAKER', 'SPECIAL_SPEAKER_NAME',
-           'Bela2',
+           'Bela2', 'read_eaf', 'from_elan',
            "__version__", "__author__", "__description__", "__copyright__"]
