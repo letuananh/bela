@@ -9,6 +9,7 @@ BELA version 2.x convention
 """
 
 import logging
+import re
 from collections import deque
 from chirptext import DataObject
 from speach import elan
@@ -27,6 +28,8 @@ SPECIAL_TIERS = ['ActivityMarkers']
 SPECIAL_SPEAKER_NAME = 'Transcriber'
 SPECIAL_SPEAKER = ':transcriber:'
 DEFAULT_TURN_THRESHOLD = 1500
+PTN_ANSI_CHUNK = re.compile(r"^\s*(([A-Za-z\'\:\?#\=_\.\-~\+@]+|\:v\:l\:iso\d{3}_\d_[a-z]{3})\s*)+\s*$")
+ANSI_CHECK_LANGUAGES = ('English', 'Vocal Sounds', 'Malay', 'Red Dot', ':v:airstream', ':v:crying', ':v:vocalizations')
 
 
 def parse_tier_name(name):
@@ -46,6 +49,45 @@ def time_map(tier):
            and u.to_ts is not None and u.to_ts.value is not None:
             _time_map[(u.from_ts.value, u.to_ts.value)] = u
     return _time_map
+
+
+def _enforce_ansi_alphabets(cu, languages=ANSI_CHECK_LANGUAGES):
+    ''' [Internal] Ensure that chunks of certain languages (e.g. English, Malay, etc.) 
+    only contains English alphabets & BELA's special characters
+
+    End users should NOT use this function.
+    It is not a part of BELA's standard APIs and may be removed in the future.
+    '''
+    if cu.language in languages:
+        if cu.text:
+            parts = cu.text.split()
+            for p in parts:
+                m = PTN_ANSI_CHUNK.match(p)
+                if m is None:
+                    cu.warnings.append(f"Unusual character was found in chunk '{cu.text}' ('{cu.language}')")
+                    return
+
+
+def _validate_baby_language(cu, person_name='unknown_participant'):
+    ''' [Internal] Validate baby language annotations
+    Show warnings when babies' chunks are tagged with adult languages
+
+    End users should NOT use this function.
+    It is not a part of BELA's standard APIs and may be removed in the future.
+    '''
+    if cu.text.strip() == '###':
+        _name = person_name.strip()
+        _lang = cu.language.strip()
+        if _name.startswith('Baby'):
+            if _lang not in (':v:vocalizations', ':v:airstream', ':v:crying', ':v:laughter'):
+                cu.errors.append(f"'###' is tagged as '{cu.language}' for {_name} (should be in (':v:vocalizations', ':v:airstream', ':v:crying', ':v:laughter'))")
+        elif _name.startswith('Sibling'):
+            if _lang not in (':v:vocalizations', ':v:airstream', ':v:crying', ':v:laughter'):
+                if cu.warnings is None:
+                    cu.warnings = []
+                cu.warnings.append(f"'###' is tagged as '{cu.language}' for {_name} (should be in (':v:vocalizations', ':v:airstream', ':v:crying', ':v:laughter'))")
+        elif _lang != 'Vocal Sounds':
+            cu.errors.append(f"'###' is tagged as '{cu.language}' for {_name} (should be 'Vocal Sounds' for non-Baby participants)")
 
 
 def _map_children(parent_tier, child_tier, errors=None, tier_class='chunks', is_many=True):
@@ -135,6 +177,9 @@ class Bela2(DataObject):
 
     def __init__(self, elan, path=":memory:", allow_empty=False,
                  nlp_tokenizer=False, word_only=True, ellipsis=True,
+                 validate_baby_languages=False,
+                 ansi_languages=ANSI_CHECK_LANGUAGES,
+                 auto_tokenize=True,
                  split_punc=True, remove_punc=True, **kwargs):
         ''' Create a new Bela2 object from an :class:`speach.elan.ELANDoc` object
 
@@ -145,6 +190,9 @@ class Bela2(DataObject):
         :rtype: bela.Bela2
         '''
         super().__init__(elan=elan, path=path, errors=[], warnings=[],
+                         validate_baby_languages=validate_baby_languages,
+                         ansi_languages=ansi_languages,
+                         auto_tokenize=auto_tokenize,
                          allow_empty=allow_empty, **kwargs)
         self.__person_map = {}
         # create special speaker map (i.e. Transcriber)
@@ -159,7 +207,8 @@ class Bela2(DataObject):
         if elan is not None:
             self.parse_names()
             self._init_tier_map()
-            self.tokenize()
+            if self.auto_tokenize:
+                self.tokenize()
 
     def tiers(self):
         return self.elan.tiers()
@@ -180,6 +229,11 @@ class Bela2(DataObject):
     @property
     def relative_media_url(self):
         return self.elan.relative_media_url
+
+    @property
+    def annotation(self, annID):
+        ''' Get an annotation object by ID '''
+        return self.elan.annotation(annID)
 
     @property
     def person_map(self):
@@ -338,6 +392,14 @@ class Bela2(DataObject):
                             u.warnings.append(f"Empty annotation '' found at [{u.from_ts} :: {u.to_ts}]")
                     if u.chunks:
                         for cu in u.chunks:
+                            if cu.errors is None:
+                                cu.errors = []
+                            if cu.warnings is None:
+                                cu.warnings = []
+                            if self.ansi_languages:
+                                _enforce_ansi_alphabets(cu, languages=self.ansi_languages)
+                            if self.validate_baby_languages:
+                                _validate_baby_language(cu, person.name)
                             if not cu.text.strip():
                                 if u.text or not self.allow_empty:
                                     u.errors.append(f"Empty chunk annotation '' found at [{cu.from_ts} :: {cu.to_ts}]")
