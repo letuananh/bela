@@ -159,7 +159,6 @@ class Bela1:
         d = dict()
         for k in sorted(self.person_tiers.keys()):
             d[k] = sorted(self.person_tiers[k])
-        # print(d)
         return d
 
     def code_person_map(self):
@@ -212,8 +211,6 @@ class Bela1:
                 elif u.tsfrom and u.tsto:
                     u.duration = u.tsduration
                     langmix.add(u)
-                else:
-                    print(f"Ignoring {u}")
         return langmix.compute() if auto_compute else langmix
 
     @staticmethod
@@ -279,7 +276,6 @@ class Bela1:
                 # ignore all Transcriber comment
                 continue
             if sent.tsduration < 0:
-                print("WARNING: invalid utterance: {} ({}) From: {} - To: {}".format(sent.text, sent.tsduration, sec2ts(sent.tsfrom), sec2ts(sent.tsto)))
                 _transcript.person_warnings[_person_name].add('Negative utterances ({:.2f})'.format(sent.tsduration))
                 tsduration = 0
             if sent.text.strip() == '':
@@ -291,7 +287,6 @@ class Bela1:
                     _transcript.person_utterances[_person_name].append(sent)
                 if sent.language in ('', '#!#?'):
                     warn_text = "language???: {} [{} -- {}] {}".format(_person_name, sec2ts(sent.tsfrom), sec2ts(sent.tsto), sent.text)
-                    print(warn_text)
                     _transcript.person_warnings[_person_name].add(warn_text)
 
                 txt = sent.text.strip()
@@ -309,8 +304,6 @@ class Bela1:
             else:
                 _transcript.tokens.update(_tks)
                 _transcript.others.update(_tks)
-        if _transcript.person_warnings:
-            print(_transcript.person_warnings)
         return _transcript
 
 
