@@ -43,6 +43,7 @@ and prints out all participants and their utterances & chunks.
 
    tutorials
    api
+   changelog
 
 
 Indices and tables
