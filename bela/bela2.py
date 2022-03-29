@@ -10,6 +10,8 @@ BELA version 2.x convention
 
 import logging
 import re
+import types
+
 from collections import deque
 from chirptext import DataObject
 from speach import elan
@@ -88,6 +90,15 @@ def _validate_baby_language(cu, person_name='unknown_participant'):
                 cu.warnings.append(f"'###' is tagged as '{cu.language}' for {_name} (should be in (':v:vocalizations', ':v:airstream', ':v:crying', ':v:laughter'))")
         elif _lang != 'Vocal Sounds':
             cu.errors.append(f"'###' is tagged as '{cu.language}' for {_name} (should be 'Vocal Sounds' for non-Baby participants)")
+
+
+def _utterance_tokenize(self, *args, **kwargs):
+    """ [Internal] Tokenize an utterance or a chunk
+
+    End users should NOT use this function.
+    It is not a part of BELA's standard APIs and may be removed in the future.
+    """
+    return tokenize(self.value, *args, **kwargs)
 
 
 def _map_children(parent_tier, child_tier, errors=None, tier_class='chunks', is_many=True):
@@ -381,6 +392,8 @@ class Bela2(DataObject):
             # validate text from utterance tier and chunk tier
             if person.utterances:
                 for u in person.utterances:
+                    # bind tokenize() function to utterances
+                    u.tokenize = types.MethodType(_utterance_tokenize, u)
                     if u.errors is None:
                         u.errors = []
                     if u.warnings is None:
@@ -392,6 +405,8 @@ class Bela2(DataObject):
                             u.warnings.append(f"Empty annotation '' found at [{u.from_ts} :: {u.to_ts}]")
                     if u.chunks:
                         for cu in u.chunks:
+                            # bind tokenize() function to chunks
+                            cu.tokenize = types.MethodType(_utterance_tokenize, cu)
                             if cu.errors is None:
                                 cu.errors = []
                             if cu.warnings is None:
