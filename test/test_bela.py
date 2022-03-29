@@ -29,4 +29,5 @@ def getLogger():
 class TestBELA(unittest.TestCase):
 
     def test_bela(self):
-        self.assertEqual(bela.__version__, '2.0.0a19')
+        print(f"Testing BELA {bela.__version__}")
+        self.assertTrue(bela.__version__)
