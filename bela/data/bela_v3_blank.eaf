@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ANNOTATION_DOCUMENT AUTHOR="" DATE="2022-03-09T14:23:55+08:00"
+    FORMAT="3.0" VERSION="3.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.mpi.nl/tools/elan/EAFv3.0.xsd">
+    <HEADER MEDIA_FILE="" TIME_UNITS="milliseconds">
+        <MEDIA_DESCRIPTOR
+            MEDIA_URL="file:///C:/Users/tuananh/Documents/ELAN/audio.wav"
+            MIME_TYPE="audio/x-wav" RELATIVE_MEDIA_URL="./audio.wav"/>
+        <PROPERTY NAME="URN">urn:nl-mpi-tools-elan-eaf:95562455-2b2b-499f-902f-aa6cc0a6ee11</PROPERTY>
+        <PROPERTY NAME="lastUsedAnnotationId">599</PROPERTY>
+    </HEADER>
+    <TIME_ORDER/>
+    <LINGUISTIC_TYPE CONSTRAINTS="Symbolic_Association"
+        CONTROLLED_VOCABULARY_REF="Languages" GRAPHIC_REFERENCES="false"
+        LINGUISTIC_TYPE_ID="Lang_SymAssoc" TIME_ALIGNABLE="false"/>
+    <LINGUISTIC_TYPE CONSTRAINTS="Time_Subdivision"
+        GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="Chunk_TimeSub" TIME_ALIGNABLE="true"/>
+    <LINGUISTIC_TYPE CONSTRAINTS="Symbolic_Association"
+        GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="Translation" TIME_ALIGNABLE="false"/>
+    <LINGUISTIC_TYPE GRAPHIC_REFERENCES="false"
+        LINGUISTIC_TYPE_ID="Utterance" TIME_ALIGNABLE="true"/>
+    <LINGUISTIC_TYPE CONSTRAINTS="Included_In"
+        CONTROLLED_VOCABULARY_REF="Target_Words_Eng"
+        GRAPHIC_REFERENCES="false"
+        LINGUISTIC_TYPE_ID="Target_Words_Eng_IncIn" TIME_ALIGNABLE="true"/>
+    <LINGUISTIC_TYPE CONTROLLED_VOCABULARY_REF="Activity_Markers"
+        GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="Activity_Marker" TIME_ALIGNABLE="true"/>
+    <LINGUISTIC_TYPE CONSTRAINTS="Symbolic_Association"
+        CONTROLLED_VOCABULARY_REF="Matrix_Languages"
+        GRAPHIC_REFERENCES="false" LINGUISTIC_TYPE_ID="Matrix_Lang" TIME_ALIGNABLE="false"/>
+    <LINGUISTIC_TYPE CONSTRAINTS="Included_In"
+        CONTROLLED_VOCABULARY_REF="Target_Words_Malay"
+        GRAPHIC_REFERENCES="false"
+        LINGUISTIC_TYPE_ID="Target_Words_Malay_IncIn" TIME_ALIGNABLE="true"/>
+    <LINGUISTIC_TYPE CONSTRAINTS="Included_In"
+        GRAPHIC_REFERENCES="false"
+        LINGUISTIC_TYPE_ID="Target_Words_Tamil_IncIn" TIME_ALIGNABLE="true"/>
+    <LINGUISTIC_TYPE CONSTRAINTS="Included_In"
+        CONTROLLED_VOCABULARY_REF="Target_Words_Mandarin"
+        GRAPHIC_REFERENCES="false"
+        LINGUISTIC_TYPE_ID="Target_Words_Mandarin_IncIn" TIME_ALIGNABLE="true"/>
+    <LINGUISTIC_TYPE CONSTRAINTS="Included_In"
+        CONTROLLED_VOCABULARY_REF="Sensitive_Masking"
+        GRAPHIC_REFERENCES="false"
+        LINGUISTIC_TYPE_ID="Sensitive_Masking_IncIn" TIME_ALIGNABLE="true"/>
+    <LINGUISTIC_TYPE CONSTRAINTS="Included_In"
+        GRAPHIC_REFERENCES="false"
+        LINGUISTIC_TYPE_ID="Baby_Target_Words_IncIn" TIME_ALIGNABLE="true"/>
+    <LANGUAGE LANG_DEF="http://cdb.iso.org/lg/CDB-00130975-001"
+        LANG_ID="und" LANG_LABEL="undetermined (und)"/>
+    <CONSTRAINT
+        DESCRIPTION="Time subdivision of parent annotation's time interval, no time gaps allowed within this interval" STEREOTYPE="Time_Subdivision"/>
+    <CONSTRAINT
+        DESCRIPTION="Symbolic subdivision of a parent annotation. Annotations refering to the same parent are ordered" STEREOTYPE="Symbolic_Subdivision"/>
+    <CONSTRAINT DESCRIPTION="1-1 association with a parent annotation" STEREOTYPE="Symbolic_Association"/>
+    <CONSTRAINT
+        DESCRIPTION="Time alignable annotations within the parent annotation's time interval, gaps are allowed" STEREOTYPE="Included_In"/>
+    <CONTROLLED_VOCABULARY CV_ID="Matrix_Languages">
+        <DESCRIPTION LANG_REF="und">List of given languages for the matrix tier</DESCRIPTION>
+        <CV_ENTRY_ML CVE_ID="cveid_4e37d260-9ce5-4e2e-b7f3-f36f64d44628">
+            <CVE_VALUE LANG_REF="und">English</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_e3bbafae-bc9f-4194-b76a-ed5ee4be18ef">
+            <CVE_VALUE LANG_REF="und">Mandarin</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_38a44870-3b93-4631-bcb9-90464f2e138b">
+            <CVE_VALUE LANG_REF="und">Malay</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_dec45387-3fdd-4969-8c19-efa6da78201c">
+            <CVE_VALUE LANG_REF="und">Tamil</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_37cf3972-1283-4e26-b21a-e3fbd43fef5a">
+            <CVE_VALUE LANG_REF="und">Arabic</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_1a2e5591-187f-463e-abd5-5789e46c7af9">
+            <CVE_VALUE DESCRIPTION="Dialect - Cantonese" LANG_REF="und">Cantonese</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_f66f8646-db89-4813-ad9b-552a7a6d7a16">
+            <CVE_VALUE DESCRIPTION="Dialect - Hainanese" LANG_REF="und">Hainanese</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_6b237cc9-ff20-4e84-b2e9-c09c150b23c3">
+            <CVE_VALUE DESCRIPTION="Dialect - Hakka" LANG_REF="und">Hakka</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_a6883e15-0aa8-4db0-9263-392acf9ce2bb">
+            <CVE_VALUE DESCRIPTION="Dialect - Hokkien" LANG_REF="und">Hokkien</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_424435fc-31cf-4063-a433-96dfefe9632a">
+            <CVE_VALUE DESCRIPTION="Dialect - Teochew" LANG_REF="und">Teochew</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_f9762130-3181-46ab-a2e7-e2b316f62a28">
+            <CVE_VALUE LANG_REF="und">Other Bahasa</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_5aa1ebcc-c168-4d04-9aee-b39e297b5d54">
+            <CVE_VALUE LANG_REF="und">Hindi</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_b0e67a62-fcbd-4f27-8a44-95a5320bcde1">
+            <CVE_VALUE LANG_REF="und">Punjabi</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_676a84ed-3e14-4c2f-8c08-58c49b9c5465">
+            <CVE_VALUE LANG_REF="und">Languageless</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_1d8d1ef0-f8cd-457e-9faf-8fa9220d01a3">
+            <CVE_VALUE LANG_REF="und">Malayalam</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_9e919cfa-5638-4bb0-8cd4-b2277deab1f6">
+            <CVE_VALUE LANG_REF="und">Telugu</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_6c440b9c-047b-4095-bf46-ea4fa72fe574">
+            <CVE_VALUE LANG_REF="und">Vocal Sounds</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_4c7e0e28-d57f-43cf-bacb-95a6c08a2318">
+            <CVE_VALUE LANG_REF="und">Non Vocal Sounds</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_764102a9-3670-431f-954c-569b501572b4">
+            <CVE_VALUE
+                DESCRIPTION="Check language; look at transcriber comments" LANG_REF="und">#!#?</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_bd8e9830-3413-4047-aaa1-cd61470ad511">
+            <CVE_VALUE DESCRIPTION="Check; sounds like Bahasa" LANG_REF="und">#!#Bahasa</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_a2c55dc8-e1d2-4630-a1d7-15d83b84586c">
+            <CVE_VALUE DESCRIPTION="Check; sounds like Mandarin" LANG_REF="und">#!#Mandarin</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_5f799a65-86a7-4fc1-a3d6-4ef4e6a6b6a9">
+            <CVE_VALUE
+                DESCRIPTION="Check; sounds like a Chinese dialect" LANG_REF="und">#!#Dialect</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_5da514ce-87e7-448b-9162-405182f37a09">
+            <CVE_VALUE
+                DESCRIPTION="Check; sounds like an Indian language" LANG_REF="und">#!#Indian</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_6c5b1d0b-207e-4fc7-9d49-b11892edf7ba">
+            <CVE_VALUE DESCRIPTION="Baby laughter" LANG_REF="und">:v:laughter</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_2dfce494-bffa-4cb0-84ec-bf6d9e788213">
+            <CVE_VALUE DESCRIPTION="Baby crying" LANG_REF="und">:v:crying</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_20786a7c-3160-48d6-b224-c686290516ac">
+            <CVE_VALUE
+                DESCRIPTION="Baby babbling and cooing (screaming, whining, exclamations, singing)" LANG_REF="und">:v:vocalizations</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_a76471e5-4c34-4c3d-96b9-641843b628ae">
+            <CVE_VALUE DESCRIPTION="Baby burping etc." LANG_REF="und">:v:airstream</CVE_VALUE>
+        </CV_ENTRY_ML>
+    </CONTROLLED_VOCABULARY>
+    <CONTROLLED_VOCABULARY CV_ID="Activity_Markers">
+        <DESCRIPTION LANG_REF="und">Markers for the start and ends of activities</DESCRIPTION>
+        <CV_ENTRY_ML CVE_ID="cveid_82c4687e-f36f-460f-8799-9870f2df6781">
+            <CVE_VALUE
+                DESCRIPTION="Start of English adult-directed vowel triangle" LANG_REF="und">:marker:start:ads_voweltri_Eng</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_820d5b50-8f3e-44ed-b773-8510eeb39944">
+            <CVE_VALUE
+                DESCRIPTION="End of English adult-direct vowel triangle" LANG_REF="und">:marker:end:ads_voweltri_Eng</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_9f6380c5-c87a-4b09-912e-aaf8215329cb">
+            <CVE_VALUE
+                DESCRIPTION="Start of Mandarin adult-direct vowel triangle" LANG_REF="und">:marker:start:ads_voweltri_Mandarin</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_2d836568-a747-47b8-abc6-1a5d57f44890">
+            <CVE_VALUE
+                DESCRIPTION="End of Mandarin adult-directed vowel triangle" LANG_REF="und">:marker:end:ads_voweltri_Mandarin</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_22269a0a-69f5-4bd9-9e57-7adaa37a17f0">
+            <CVE_VALUE
+                DESCRIPTION="Start of Tamil adult-directed vowel triangle" LANG_REF="und">:marker:start:ads_voweltri_Tamil</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_0d303b46-1332-4f58-8ef8-4b641905d598">
+            <CVE_VALUE
+                DESCRIPTION="End of Tamil adult-directed vowel triangle" LANG_REF="und">:marker:end:ads_voweltri_Tamil</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_68463630-e0c3-4014-a16e-171d6e93ecb5">
+            <CVE_VALUE
+                DESCRIPTION="Start of Malay adult-directed vowel triangle" LANG_REF="und">:marker:start:ads_voweltri_Malay</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_837d17ea-c0a2-4186-bc69-c0ce89dbab4f">
+            <CVE_VALUE
+                DESCRIPTION="End of Malay adult-directed vowel triangle" LANG_REF="und">:marker:end:ads_voweltri_Malay</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_4333cd71-89ad-4548-96da-8042a598714f">
+            <CVE_VALUE
+                DESCRIPTION="Start of English adult-directed prompts" LANG_REF="und">:marker:start:ads_prompts_Eng</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_f3e06635-5ced-49b4-8349-c560d84d9225">
+            <CVE_VALUE
+                DESCRIPTION="End of English adult-directed prompts" LANG_REF="und">:marker:end:ads_prompts_Eng</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_bcdd0019-ef12-41f4-89cd-647631ad8a05">
+            <CVE_VALUE
+                DESCRIPTION="Start of Mandarin adult-directed prompts" LANG_REF="und">:marker:start:ads_prompts_Mandarin</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_5f64d823-1285-4368-ad40-6d3ce314b1ff">
+            <CVE_VALUE
+                DESCRIPTION="End of Mandarin adult-directed prompts" LANG_REF="und">:marker:end:ads_prompts_Mandarin</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_9ab90251-1f3d-41fc-9bf8-e45a5be42545">
+            <CVE_VALUE
+                DESCRIPTION="Start of Tamil adult-directed prompts" LANG_REF="und">:marker:start:ads_prompts_Tamil</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_2be80f83-e983-4672-ba25-34b61c8163e8">
+            <CVE_VALUE DESCRIPTION="End of Tamil adult-directed prompts" LANG_REF="und">:marker:end:ads_prompts_Tamil</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_3f91d515-b847-4f5b-b155-461121132d14">
+            <CVE_VALUE
+                DESCRIPTION="Start of Malay adult-directed prompts" LANG_REF="und">:marker:start:ads_prompts_Malay</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_96bbbe80-596a-4be7-9d30-b04936414e9e">
+            <CVE_VALUE DESCRIPTION="End of Malay adult-directed prompts" LANG_REF="und">:marker:end:ads_prompts_Malay</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_16ab3f3d-14ab-47f3-9118-71cee2fb348a">
+            <CVE_VALUE
+                DESCRIPTION="Start of adult-directed Green Grass Park" LANG_REF="und">:marker:start:ads_ggp</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_5e9d971b-3846-4b57-b29d-aea99f8582f5">
+            <CVE_VALUE
+                DESCRIPTION="End of adult-directed Green Grass Park" LANG_REF="und">:marker:end:ads_ggp</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_ec580ce2-f745-4cf9-adf2-cd2f8e7a0738">
+            <CVE_VALUE
+                DESCRIPTION="Start of child-directed Green Grass Park" LANG_REF="und">:marker:start:cds_ggp</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_41876796-1be8-4669-864b-11f4780c1d88">
+            <CVE_VALUE
+                DESCRIPTION="End of child-directed Green Grass Park" LANG_REF="und">:marker:end:cds_ggp</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_7e3c3633-ded7-4c2e-ab6e-05f16b96c8ff">
+            <CVE_VALUE
+                DESCRIPTION="Start of child-directed book reading" LANG_REF="und">:marker:start:cds_book</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_aa2d3437-5cec-4a9d-b993-634de625df7b">
+            <CVE_VALUE DESCRIPTION="End of child-directed book reading" LANG_REF="und">:marker:end:cds_book</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_c3434eac-0023-4f42-ba14-105b9799a9ce">
+            <CVE_VALUE
+                DESCRIPTION="Start of English child-directed vowel triangle" LANG_REF="und">:marker:start:cds_voweltri_Eng</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_eacf28f4-8a96-491c-8868-1d0b0baecd40">
+            <CVE_VALUE
+                DESCRIPTION="End of English child-directed vowel triangle" LANG_REF="und">:marker:end:cds_voweltri_Eng</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_0bc4b5b9-d21c-4b3a-ae4a-c2a172763293">
+            <CVE_VALUE
+                DESCRIPTION="Start of Mandarin child-directed vowel triangle" LANG_REF="und">:marker:start:cds_voweltri_Mandarin</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_3b70d7a7-d71e-4e0e-bd4a-7900e54c523c">
+            <CVE_VALUE
+                DESCRIPTION="End of Mandarin child-directed vowel triangle" LANG_REF="und">:marker:end:cds_voweltri_Mandarin</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_638e9a38-440a-4ff7-80d8-12e12a88fa5a">
+            <CVE_VALUE
+                DESCRIPTION="Start of Tamil child-directed vowel triangle" LANG_REF="und">:marker:start:cds_voweltri_Tamil</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_db1791d7-3824-4954-91c2-0780fd9bfa6e">
+            <CVE_VALUE
+                DESCRIPTION="End of Tamil child-directed vowel triangle" LANG_REF="und">:marker:end:cds_voweltri_Tamil</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_db9aaa22-3017-42f5-b662-b5333999bae0">
+            <CVE_VALUE
+                DESCRIPTION="Start of Malay child-directed vowel triangle" LANG_REF="und">:marker:start:cds_voweltri_Malay</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_0b674084-c94a-4ab9-871c-469dc0012b58">
+            <CVE_VALUE
+                DESCRIPTION="End of Malay child-directed vowel triangle" LANG_REF="und">:marker:end:cds_voweltri_Malay</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_bdbb35fa-5ca8-4712-9b5f-0a7790d7b527">
+            <CVE_VALUE
+                DESCRIPTION="Start of Growing Collection Form segment" LANG_REF="und">:marker:start:growing_collection</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_1cd7646b-3397-4db4-898a-66e1cdd895a8">
+            <CVE_VALUE
+                DESCRIPTION="End of Growing Collection Form segment" LANG_REF="und">:marker:end:growing_collection</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_a01d56ee-f87f-49aa-8bdf-493a39506222">
+            <CVE_VALUE
+                DESCRIPTION="Start of survey follow up questions segment" LANG_REF="und">:marker:start:survey_follow_up</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_ec1d03ea-1b6c-4877-8a2e-8084cd0e701f">
+            <CVE_VALUE
+                DESCRIPTION="End of survey follow up questions segment" LANG_REF="und">:marker:end:survey_follow_up</CVE_VALUE>
+        </CV_ENTRY_ML>
+    </CONTROLLED_VOCABULARY>
+    <CONTROLLED_VOCABULARY CV_ID="Sensitive_Masking">
+        <DESCRIPTION LANG_REF="und">List of placeholders used to redact names or confidential information mentioned within the recording</DESCRIPTION>
+        <CV_ENTRY_ML CVE_ID="cveid_42a50237-5e28-4720-86ea-84a1046f6e1d">
+            <CVE_VALUE DESCRIPTION="Baby's name" LANG_REF="und">BABYNAME</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_e7748db1-628f-48bf-90dd-4355e2b1d6cc">
+            <CVE_VALUE DESCRIPTION="Baby's sibling's name" LANG_REF="und">SIBLINGNAME</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_88ecf4b2-c2cd-4283-b318-4818abc8ac12">
+            <CVE_VALUE DESCRIPTION="Adult's name" LANG_REF="und">ADULTNAME</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_7f319b88-6351-4800-b7d9-11c3529aa24b">
+            <CVE_VALUE DESCRIPTION="Baby's father's name" LANG_REF="und">FATHERNAME</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_b6d9ce5c-73cb-45cf-8484-f78ef07bba20">
+            <CVE_VALUE DESCRIPTION="Baby's mother's name" LANG_REF="und">MOTHERNAME</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_7ef21679-5bec-4d60-8e2f-281ea1eb7f83">
+            <CVE_VALUE DESCRIPTION="Baby's grandmother's name" LANG_REF="und">GRANDMOTHERNAME</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_d0c7767f-2d6f-4ceb-8423-776ad8ac75e0">
+            <CVE_VALUE DESCRIPTION="Baby's grandfather's name" LANG_REF="und">GRANDFATHERNAME</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_b913aca7-3a7f-47b0-8952-33168fd7beb9">
+            <CVE_VALUE
+                DESCRIPTION="Stranger's name (e.g., classmate, family friend)" LANG_REF="und">STRANGERNAME</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_3c3901f8-7c88-4e78-bd50-68e95b5d76c4">
+            <CVE_VALUE
+                DESCRIPTION="Confidential information (e.g., participant ID, pins, passwords, personal discussions)" LANG_REF="und">CONFIDENTIAL</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_4e89cb1b-5604-4e38-9359-271f02cbccee">
+            <CVE_VALUE
+                DESCRIPTION="Check; candidate for redaction and requires supervisor to check" LANG_REF="und">:PROTECTION-CHECK</CVE_VALUE>
+        </CV_ENTRY_ML>
+    </CONTROLLED_VOCABULARY>
+    <CONTROLLED_VOCABULARY CV_ID="Target_Words_Mandarin">
+        <DESCRIPTION LANG_REF="und">Mandarin target words from Green Grass Park and Picture Cards (Vowel Triangle) activities in the Voicemail Game and Video Call Storytime</DESCRIPTION>
+        <CV_ENTRY_ML CVE_ID="cveid_50b05b42-bbee-469b-a890-ceac5731107e">
+            <CVE_VALUE
+                DESCRIPTION="picture cards word - voicemail game or timepoint three video call" LANG_REF="und">皮带</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_a6649e04-08de-409e-abce-ccc3fcc17dac">
+            <CVE_VALUE
+                DESCRIPTION="picture cards word - voicemail game or timepoint three video call" LANG_REF="und">爬</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_edba1f3e-7c08-43d2-8f10-b7bcb9f770da">
+            <CVE_VALUE
+                DESCRIPTION="picture cards word - voicemail game or timepoint three video call" LANG_REF="und">葡萄</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_f784c7b5-f3f4-4133-bb4a-90c60e216110">
+            <CVE_VALUE
+                DESCRIPTION="picture cards word - voicemail game or timepoint three video call" LANG_REF="und">怕</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_f9ce8e33-969d-44e9-bd6e-0c74c77a822b">
+            <CVE_VALUE
+                DESCRIPTION="picture cards word - voicemail game or timepoint three video call" LANG_REF="und">瀑布</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_1ad841c2-6024-4ece-90fc-211d3f3e4e01">
+            <CVE_VALUE
+                DESCRIPTION="picture cards word - voicemail game or timepoint three video call" LANG_REF="und">屁</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_266e3a66-23c7-4a2d-93d1-4bc901d2fbf1">
+            <CVE_VALUE
+                DESCRIPTION="picture cards word - voicemail game or timepoint three video call" LANG_REF="und">力</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_5e5a9f92-849c-49f1-859e-517c1340d739">
+            <CVE_VALUE
+                DESCRIPTION="picture cards word - voicemail game or timepoint three video call" LANG_REF="und">绿</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_9937ef6c-b169-44f4-8423-5f7e038288af">
+            <CVE_VALUE
+                DESCRIPTION="picture cards word - voicemail game or timepoint three video call" LANG_REF="und">路</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_e1ee4d96-b4eb-49cb-9c43-cf4d77b46702">
+            <CVE_VALUE
+                DESCRIPTION="picture cards word - voicemail game or timepoint three video call" LANG_REF="und">撕</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_1cfae804-7a23-4315-b09d-7351f979c500">
+            <CVE_VALUE
+                DESCRIPTION="picture cards/GGP word in voicemail game or timepoint three video call" LANG_REF="und">西瓜</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_62864e66-937d-4888-b39e-e224e4b7c6cd">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">歌曲</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_d0f75601-1e6f-4009-8520-26417c4d421b">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">四个鸭子</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_8f7d2183-8efe-4be8-8562-8a187197ed42">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">鱼</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_c8ebc519-3f32-431f-8399-a2f5fd280d27">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">桥</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_d21e4fb6-5dc2-41c5-a257-bf10778eb90d">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">青蛙</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_848cba7f-9d49-4ef6-9d0f-1431734f20a4">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">女生</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_32e91cb7-1bc7-4cad-afdc-e6e66fb79386">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">羽毛球</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_34c3fc9a-1b3a-47b5-95de-9bd8c6f7bd2e">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">下雨</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_b152aa35-a808-4ab6-87e1-2aa462ceef39">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">雨伞</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_7b35ab5a-9a06-44f8-9460-9348ec1d5d4d">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">衣服</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_56861627-e538-49ba-9682-5a6d88a815e6">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">许多语言</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_6995a1a2-8250-449b-b1e3-f1ba5b830dc0">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">蜜蜂</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_41189a22-044e-4212-88af-eaf9db4a3589">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">树</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_fbb051d2-9964-47d9-baec-47f310cdb676">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">蝴蝶</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_bb0719a5-c22f-4a24-9e5e-fa35610537f9">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">菊花茶</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_f5d76989-5384-49a3-8f21-d520c3155e55">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">游戏</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_9ef6c857-aa4e-47bd-90c4-df1a4cc0fdcb">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">绿灯</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_b4499be3-f435-4256-89cc-bf7c20fa1635">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">猫</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_59dcbee7-c1dc-4a94-886a-a5c773bac835">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">巴士站</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_5eb2e0e7-2a82-4ddb-96cb-ca255cf79ca6">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">椅子</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_47ea90a1-d2ea-453a-9fdb-7bb1204def00">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">阿姨</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_6dadd18f-6fa3-4a93-833f-c53febbd75cb">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">橘子</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_ec082027-a2bf-45aa-8f04-5185fab34744">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">自行车</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_56da9df4-a262-48af-94a3-bfa1255f10b0">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">旅行箱</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_cdc5e770-5b28-4f0a-8a24-b0a095ea9dd6">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">照相机</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_1d99c113-db2b-4a8f-8cba-f278b10ee248">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">马路</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_dfab8cfc-ba5b-4df4-bf85-bf5d0737af18">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">去</CVE_VALUE>
+        </CV_ENTRY_ML>
+    </CONTROLLED_VOCABULARY>
+    <CONTROLLED_VOCABULARY CV_ID="Target_Words_Eng">
+        <DESCRIPTION LANG_REF="und">English target words from Picture Cards (Vowel Triangle) activities in the Voicemail Game and Video Call Storytime</DESCRIPTION>
+        <CV_ENTRY_ML CVE_ID="cveid_3fa5b91a-4514-42ee-a274-927577cb44d9">
+            <CVE_VALUE
+                DESCRIPTION="picture cards word - voicemail game or timepoint three video call" LANG_REF="und">pea</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_f461a28a-df9c-4e9a-9f05-aad27a5c0681">
+            <CVE_VALUE
+                DESCRIPTION="picture cards word - voicemail game or timepoint three video call" LANG_REF="und">puddle</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_bbe27a17-aab2-44f3-84bc-70d1fbd75624">
+            <CVE_VALUE
+                DESCRIPTION="picture cards word - voicemail game or timepoint three video call" LANG_REF="und">poo</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_cf3a9b79-d564-4417-9c1c-01ae34eb5b24">
+            <CVE_VALUE
+                DESCRIPTION="picture cards word - voicemail game or timepoint three video call" LANG_REF="und">partner</CVE_VALUE>
+        </CV_ENTRY_ML>
+    </CONTROLLED_VOCABULARY>
+    <CONTROLLED_VOCABULARY CV_ID="Languages">
+        <DESCRIPTION LANG_REF="und">List of given languages for the languages tier</DESCRIPTION>
+        <CV_ENTRY_ML CVE_ID="cveid_5f247ff3-8bc2-4238-a079-7594e3209555">
+            <CVE_VALUE LANG_REF="und">English</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_8cd8cb32-2e7f-4354-9bf0-cb8e222ea930">
+            <CVE_VALUE LANG_REF="und">Mandarin</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_e511f8b1-8941-4f7c-8767-22b66e9ceb27">
+            <CVE_VALUE LANG_REF="und">Malay</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_d7021c1c-441b-446e-94d7-630aad26bdbb">
+            <CVE_VALUE LANG_REF="und">Tamil</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_4047a227-f900-4512-90a6-da67b1e886fe">
+            <CVE_VALUE LANG_REF="und">Arabic</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_c3b72c87-3515-4563-97e4-23f8dd984854">
+            <CVE_VALUE DESCRIPTION="Singaporean word (e.g., mammam)" LANG_REF="und">Red Dot</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_0763843f-b990-44b3-a7c5-4efdee424c5f">
+            <CVE_VALUE DESCRIPTION="Dialect - Cantonese" LANG_REF="und">Cantonese</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_1f3fa081-d912-492c-a023-7c1245667ea6">
+            <CVE_VALUE DESCRIPTION="Dialect - Hainanese" LANG_REF="und">Hainanese</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_794c745c-60c5-4d21-ae81-1237bd03e0e8">
+            <CVE_VALUE DESCRIPTION="Dialect - Hakka" LANG_REF="und">Hakka</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_41b33b97-be5a-4e78-9217-c3703a7c6c29">
+            <CVE_VALUE DESCRIPTION="Dialect - Hokkien" LANG_REF="und">Hokkien</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_bc720a5b-8182-41cd-a7a5-2193deb77771">
+            <CVE_VALUE DESCRIPTION="Dialect - Teochew" LANG_REF="und">Teochew</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_db0184ce-4202-4555-9e1b-04a20e156835">
+            <CVE_VALUE LANG_REF="und">Other Bahasa</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_61682bea-d365-450d-ae41-cdad70b16566">
+            <CVE_VALUE LANG_REF="und">Hindi</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_5980fdbc-ec98-43f5-aa7b-9011ffd906c5">
+            <CVE_VALUE LANG_REF="und">Malayalam</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_f22e3962-df0f-460b-b28e-a17972f83bfe">
+            <CVE_VALUE LANG_REF="und">Punjabi</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_2f017e88-8657-40fd-af0b-1b510958718a">
+            <CVE_VALUE LANG_REF="und">Languageless</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_e4017be5-9d17-4572-8970-ad844611f28a">
+            <CVE_VALUE LANG_REF="und">Telugu</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_f9a4a7b8-ac3a-4b37-b072-fed5e12d6022">
+            <CVE_VALUE LANG_REF="und">Non Vocal Sounds</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_9cee0b92-4c3e-44d9-9ac5-96bd19423f3f">
+            <CVE_VALUE LANG_REF="und">Vocal Sounds</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_7fd85147-edc2-435c-980a-5cd78049a55f">
+            <CVE_VALUE
+                DESCRIPTION="Check language; look at transcriber comments" LANG_REF="und">#!#?</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_a0d16e0e-b9b6-435e-8546-1e87a6bad248">
+            <CVE_VALUE DESCRIPTION="Check; sounds like Bahasa" LANG_REF="und">#!#Bahasa</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_6d3808f7-481e-454b-b88f-e3d1caad9e2a">
+            <CVE_VALUE DESCRIPTION="Check; sounds like Mandarin" LANG_REF="und">#!#Mandarin</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_bc896885-cc56-44c6-b942-d408fdca2f25">
+            <CVE_VALUE
+                DESCRIPTION="Check; sounds like a Chinese dialect" LANG_REF="und">#!#Dialect</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_af5b1247-221a-4ac0-b3ce-c196795aa63d">
+            <CVE_VALUE
+                DESCRIPTION="Check; sounds like an Indian language" LANG_REF="und">#!#Indian</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_ff0c8ea7-f340-4554-aae5-52a3d2d85dc0">
+            <CVE_VALUE DESCRIPTION="Baby laughter" LANG_REF="und">:v:laughter</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_21fb61d8-e528-4505-b719-2e802acb488c">
+            <CVE_VALUE DESCRIPTION="Baby crying" LANG_REF="und">:v:crying</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_a71201f5-f612-4981-8671-4fea44c02e71">
+            <CVE_VALUE
+                DESCRIPTION="Baby babbling and cooing (screaming, whining, exclamations, singing)" LANG_REF="und">:v:vocalizations</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_7eb11993-d86b-4bb7-a6d2-3a6748e1e99e">
+            <CVE_VALUE DESCRIPTION="Baby burping etc." LANG_REF="und">:v:airstream</CVE_VALUE>
+        </CV_ENTRY_ML>
+    </CONTROLLED_VOCABULARY>
+    <CONTROLLED_VOCABULARY CV_ID="Target_Words_Malay">
+        <DESCRIPTION LANG_REF="und">Malay target words from Green Grass Park and Picture Cards (Vowel Triangle) activities in the Voicemail Game and Video Call Storytime</DESCRIPTION>
+        <CV_ENTRY_ML CVE_ID="cveid_0fa36173-b517-4a54-bf2f-2d71def32fb9">
+            <CVE_VALUE
+                DESCRIPTION="picture cards word - voicemail game or timepoint three video call" LANG_REF="und">pisang</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_744f95fa-3720-4ebb-81df-59c0c3779933">
+            <CVE_VALUE
+                DESCRIPTION="picture cards word - voicemail game or timepoint three video call" LANG_REF="und">padang</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_c89da633-7e0d-4c0f-8137-f44f888394d5">
+            <CVE_VALUE
+                DESCRIPTION="picture cards word - voicemail game or timepoint three video call" LANG_REF="und">puting</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_6d2a03e6-83bd-4e2a-adba-60295b37d97b">
+            <CVE_VALUE
+                DESCRIPTION="picture cards word - voicemail game or timepoint three video call" LANG_REF="und">pagar</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_d771ef77-cef2-4c61-a50c-43e863ff706d">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">hujan</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_d7e0dfea-a1c0-4886-af32-4f2a48a1115c">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">rama-rama</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_84088cfd-4180-4f10-8eea-d7f511a00ab3">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">kucing</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_ba563918-2fbf-40b8-af2a-dbdd9c67bdb4">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">payung</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_0de1326f-7f09-4d4d-95d1-43f5a4d98ab4">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">jalanraya</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_7008868e-143f-4079-af64-192d3ac8c038">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">nyamuk</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_2e766701-a6a5-4db1-969d-aad17fa4fc70">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">perhentian bas</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_d50084cb-ad6c-47bc-bbc1-a948bac0bfd7">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">kolam</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_5d1def5b-95b4-413d-859c-5957a25999ae">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">jambatan</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_74f91ffc-09ca-4f2f-a54e-ec8907941204">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">awan</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_b44731fb-0b58-4b07-92e1-322208f197c4">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">lebah</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_f6fa2932-23fe-4900-a597-654cbd547041">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">katak</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_810209ef-2eac-4b75-a2b3-fb5a0c8d7627">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">banyak ikan</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_cf59e622-c296-42f9-a8a2-1a08940f8292">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">pakaian</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_a39c4a2a-518e-4f84-afc2-7e62824f7e00">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">senyum</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_37143aef-4618-4338-bd0f-877b2e81b7f5">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">nenek</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_ffd32179-7b22-40d5-9680-c8016a25a1b2">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">enak</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_6af1a570-f592-42c3-8765-5b597ed679ff">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">teh</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_7c52d455-9dbd-4d04-9580-6a66b1fc6a1c">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">buih</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_e6565f90-ac69-49b1-a3ca-45ea2c7dfd4b">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">nyanyi</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_d3eb9ad9-b4e2-4e15-b95d-e339b36de7b0">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">layang-layang</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_8e1b8d77-142f-4cc1-8309-025835a1b8df">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">perempuan</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_4d9b1b67-e307-41dd-a9f3-98b2c6cf003c">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">baju</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_132deeef-db5e-466a-9678-08eff489c879">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">lagu</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_d0f84182-48b8-4db4-9360-539d7d33ebff">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">jaring</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_0838d351-6042-4954-9d9a-8098537b0ccc">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">papan tanda</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_60ebae42-541b-4d64-9c84-020a5a091ea8">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">kepala</CVE_VALUE>
+        </CV_ENTRY_ML>
+        <CV_ENTRY_ML CVE_ID="cveid_657edcbb-413c-4d1e-9a26-c4551ec69ad8">
+            <CVE_VALUE DESCRIPTION="GGP word - voicemail game" LANG_REF="und">bunga</CVE_VALUE>
+        </CV_ENTRY_ML>
+    </CONTROLLED_VOCABULARY>
+</ANNOTATION_DOCUMENT>

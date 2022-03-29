@@ -54,7 +54,7 @@ setup(
     long_description=long_description,
     long_description_content_type='text/markdown',
     packages=['bela', 'bela.data'],
-    package_data={'bela': ['data/*.gz']},
+    package_data={'bela': ['data/*.gz', 'data/*.eaf']},
     include_package_data=True,
     platforms='any',
     test_suite='test',
