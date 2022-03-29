@@ -496,6 +496,9 @@ class Bela2(DataObject):
                                 langmix.add(c)
         return langmix.compute() if auto_compute else langmix
 
+    def save(self, *args, **kwargs):
+        return self.elan.save(*args, **kwargs)
+
     @staticmethod
     def read_eaf(eaf_path, **kwargs):
         ''' Read an EAF file as a Bela2 object
