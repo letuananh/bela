@@ -6,6 +6,7 @@ BELA Changelog
 BELA 2.0.0a22 [WIP]
 -------------------
 
+  - Added tokenize() function to utterances and chunks
   - Added the first working prototype of BELA builder (2022-03-29)
   - Added Bela2.save() function
   - Kickstarted BELA documentation
