@@ -6,6 +6,8 @@ BELA Changelog
 BELA 2.0.0a22 [WIP]
 -------------------
 
+  - Added the first working prototype of BELA builder (2022-03-29)
+  - Added Bela2.save() function
   - Kickstarted BELA documentation
   - Added BELA documentation: https://bela.readthedocs.io/
   - Added ANSI & baby language checking rules
