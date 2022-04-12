@@ -14,16 +14,13 @@
 pip install bela
 ```
 
-**Citation**: Tuan Anh Le, 
-              Seraphina Fong,
-              Jinyi Wong,
-              Fei Ting Woon,
-              Eshwaaree C Yogarrajah,
-              Nur Sakinah Binte Mohd Salleh,
-              Shaza binte Amran,
-              Suzy J Styles, 2021,
-              "BELA - A Processing Pathway for Multilingual Parent-child Conversations",
-              [BMRS 2021](https://www.bilingualism-matters.org/events/bilingualism-matters-research-symposium-2021)
+## Citation
+
+Tuan Anh Le, Seraphina Fong, Jinyi Wong,
+Fei Ting Woon, Eshwaaree C Yogarrajah, Nur Sakinah Binte Mohd Salleh, Shaza binte Amran,
+Suzy J Styles, 2021,
+*"BELA - A Processing Pathway for Multilingual Parent-child Conversations"*,
+[BMRS 2021](https://www.bilingualism-matters.org/events/bilingualism-matters-research-symposium-2021)
 
 ## License
 
